@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Blog from './Blog';
+import Comment from './Comment';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState();
@@ -12,12 +13,11 @@ const Blogs = () => {
     useEffect(()=>{
         sendRequest().then (data => setBlogs(data.blogs));
     }, [])
-    console.log(blogs);
+    // console.log(blogs);
   return (
     <div>
       <h1>
         <center>
-        Landing Page
           </center>
           </h1>
         {blogs && blogs.map((blog, index)=> (

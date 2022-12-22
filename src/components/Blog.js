@@ -5,6 +5,7 @@ import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useStyles } from './utils';
+import Comment from './Comment';
 
 const Blog = ({title, description,imageURL, userName, isUser, id }) => {
   const classes = useStyles();
@@ -23,7 +24,7 @@ const Blog = ({title, description,imageURL, userName, isUser, id }) => {
     .then(()=>navigate('/'))
     .then(()=>navigate('/blogs'));
   }
-  console.log(title, isUser)
+  // console.log(title, isUser)
   return (
     <div>
       {" "}
@@ -68,6 +69,7 @@ const Blog = ({title, description,imageURL, userName, isUser, id }) => {
           {description}
         </Typography>
       </CardContent>
+      <Comment />
     </Card>
     </div>
   )

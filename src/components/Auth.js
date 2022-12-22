@@ -44,7 +44,7 @@ const Auth = () => {
             sendRequest()
             .then((data)=>localStorage.setItem("userId", data.user._id))
             .then(()=>dispath(authActions.login()))
-            .then(()=>navigate("/blogs"))
+            .then(()=>navigate("/auth"))
             .then((data) => console.log(data));
         }
     }

@@ -1,3 +1,4 @@
+import { Api } from "@mui/icons-material";
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const authSlice = createSlice({
@@ -19,3 +20,5 @@ export const authActions = authSlice.actions
 export const store = configureStore({
     reducer: authSlice.reducer
 })
+
+export const comment = (value, id) => Api.post(`/posts/${id}/commentPost`, { value })
